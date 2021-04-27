@@ -1,0 +1,48 @@
+{% extends 'basetemplate 2.html' %}
+{% block content %}
+                    <!-- Page content -->
+                    <div id="page-content">
+                        <!-- First Row -->
+                        <div class="row">
+
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="container" >
+      <div class="">
+        <a href="{% url 'accounts:addaccount' %}" class="btn btn-info" style="float:right;MARGIN-RIGHT: 02%;" >Add Account</a>
+        <br><br>
+        {#        <h2>Create an Awesome New Article</h2>#}
+        <table class="table table-bordered table-striped" style="background-color: white">
+            <thead>
+            <th>#</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>Actions</th>
+            </thead>
+            <tbody>
+            {% for acc in acc %}
+            <tr style="color: black">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ acc.userid }}</td>
+                <td>{{ acc.password }}</td>
+                <td> <a href="{% url 'accounts:updateaccount' acc.id %}" style="background-color: #454E59; color: white" class="btn ">Update</a> <a href="{% url 'accounts:deleteaccount' acc.id %}" style="background-color: #CA0028; color: white" class="btn ">Delete</a>  </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+                        </div>
+                        <!-- END Second Row -->
+
+
+                    </div>
+
+                    <!-- END Page Content -->
+                </div>
+
+{% endblock %}
+                <!-- END Main Container -->

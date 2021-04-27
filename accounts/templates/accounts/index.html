@@ -1,0 +1,108 @@
+{% extends 'basetemplate 2.html' %}
+{% load static %}
+
+                    <!-- END Header -->
+{% block content %}
+
+            <!-- Page content -->
+            <div id="page-content">
+                <!-- First Row -->
+                <div class="row">
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-12 col-lg-12">
+                        <!-- Forum Block -->
+                        <div class="block">
+                            <!-- Forum Tabs Title -->
+                            <div class="block-title">
+                                <ul class="nav nav-tabs" data-toggle="tabs">
+                                    <li class="active"><a href="#forum-categories">NAME</a></li>
+                                </ul>
+                            </div>
+                            <!-- END Forum Tabs -->
+
+                            <!-- Tab Content -->
+                            <div class="tab-content">
+                                <!-- Forum -->
+
+
+                                <div class="tab-pane active" id="forum-categories">
+                                    <h3 class="text-dark" style="font-weight: bold;">Dashboard</h3>
+                                </div>
+
+                                <form  action="{% url 'accounts:instabotcode' %}" method="post"  class="form-horizontal form-bordered" >
+                                    {% csrf_token %}
+                                    <!-- Jquery Tags Input (class is initialized in js/app.js -> uiInit()), for extra usage examples you can check out https://github.com/xoxco/jQuery-Tags-Input -->
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Enter Target Accounts</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="example-tags" name="example-tags" class="input-tags" value="abdulrahman_ijaz, qlla_by_nomi" >
+                                        </div>
+                                        <p style="font-size: x-small;margin-left: 30%;">Please, place at least 5-6 accounts competitors to target.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">Enter Number of Accounts</label>
+                                        <div class="col-md-9">
+                                            <input type="number" class=" form-control " min="1" value="{{ maximum }}" style="width: 350px; height: 35px" id="example-tag" name="account_number_tag"  placeholder="1,2, or more" max="{{ maximum }}" >
+                                        </div>
+                                        <p style="font-size: x-small;margin-left: 30%;">Please, enter value in numerical form</p>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="tab-pane active" id="forum-categories" style="margin-left: 1%;">
+                                            <h3 class="text-dark" style="font-weight: bold;">Options</h3>
+                                        </div>
+                                        <label class="col-md-3 control-label">Like</label>
+                                        <div class="col-md-9">
+                                            <label class="switch switch-info"><input name="liked" type="checkbox" value="1" ><span></span></label>
+                                        </div>
+                                        <label class="col-md-3 control-label">Comment</label>
+                                        <div class="col-md-9">
+                                            <label class="switch switch-info"><input name="commented" type="checkbox" value="1" ><span></span></label>
+                                        </div>
+                                        <label class="col-md-3 control-label">Follow</label>
+                                        <div class="col-md-9">
+                                            <label class="switch switch-info"><input name="followed" type="checkbox" value="1" ><span></span></label>
+                                        </div>
+                                        <label class="col-md-3 control-label">Watch Stories</label>
+                                        <div class="col-md-9">
+
+                                            <label class="switch switch-info"><input name="storyview" type="checkbox" value="1" ><span></span></label>
+                                            <button style="margin-left: 700px" type="submit" id="load-button" class="btn btn-rounded btn-info text-center">Start Bot</button>
+
+                                        </div>
+                                    </div>
+{#                                     <div class="col-md-3">#}
+{#                                            <button type="submit" id="load-button" class="btn btn-rounded btn-info text-center">Start Bot</button>#}
+{#                                        </div>#}
+                                    <br>
+                                    <br>
+{#                                    <div class="form-group">#}
+{##}
+{#                                        <div class="col-md-3">#}
+{#                                            <button type="submit" id="load-button" class="btn btn-rounded btn-info text-center">Start Bot</button>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                </form>
+                                <div class="loading-overlay">
+                                    <img src="{% static 'loading.gif' %}">
+                                </div>
+
+                            </div>
+                            <!-- END Tab Content -->
+                        </div>
+                        <!-- END Forum Block -->
+                    </div>
+
+                </div>
+                <!-- END Second Row -->
+
+
+            </div>
+
+{% endblock %}
+            <!-- END Page Content -->

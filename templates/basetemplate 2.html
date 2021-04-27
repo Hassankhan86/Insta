@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+ <html class="no-js" lang="en">
+    <head>
+    <script src="https://kit.fontawesome.com/81544578fb.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <meta charset="utf-8">
+
+        <title>App - Admin</title>
+        <script
+          src="https://code.jquery.com/jquery-2.2.4.js"
+          integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+          crossorigin="anonymous"></script>
+
+
+        <meta name="description" content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+
+        <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'icon57.png' %}" sizes="57x57">
+        <link rel="apple-touch-icon" href="{% static 'icon72.png' %} " sizes="72x72">
+        <link rel="apple-touch-icon" href="{% static 'icon76.png' %}" sizes="76x76">
+        <link rel="apple-touch-icon" href="{% static 'icon114.png' %}" sizes="114x114">
+        <link rel="apple-touch-icon" href="{% static 'icon120.png' %}" sizes="120x120">
+        <link rel="apple-touch-icon" href="{% static 'icon144.png' %}" sizes="144x144">
+        <link rel="apple-touch-icon" href="{% static 'icon152.png' %}" sizes="152x152">
+        <link rel="apple-touch-icon" href="{% static 'icon180.png' %}" sizes="180x180">
+
+        <link rel="stylesheet" href="{% static  'bootstrap.min.css'%}">
+
+        <!-- Related styles of various icon packs and plugins -->
+        <link rel="stylesheet" href="{% static 'plugins.css' %}">
+
+        <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+        <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+
+        <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+        <link rel="stylesheet" href="{% static 'themes.css' %}">
+        <!-- END Stylesheets -->
+
+        <!-- Modernizr (browser feature detection library) -->
+        <script src="{% static 'modernizr-3.3.1.min.js' %}"></script>
+    </head>
+    <body>
+
+        <div id="page-wrapper" class="page-loading">
+
+            <div class="preloader">
+                <div class="inner">
+                    <!-- Animation spinner for all modern browsers -->
+                    <div class="preloader-spinner themed-background hidden-lt-ie10"></div>
+
+                    <!-- Text for IE9 -->
+                    <h3 class="text-primary visible-lt-ie10"><strong>Loading..</strong></h3>
+                </div>
+            </div>
+
+            <div id="page-container" class="header-fixed-top sidebar-visible-lg-full">
+                <!-- Alternative Sidebar -->
+                <div id="sidebar-alt" tabindex="-1" aria-hidden="true">
+                    <!-- Toggle Alternative Sidebar Button (visible only in static layout) -->
+                    <a href="javascript:void(0)" id="sidebar-alt-close" onclick="App.sidebar('toggle-sidebar-alt');"><i class="fa fa-times"></i></a>
+
+                    <!-- Wrapper for scrolling functionality -->
+                    <div id="sidebar-scroll-alt">
+                        <!-- Sidebar Content -->
+                        <div class="sidebar-content">
+                            <!-- Profile -->
+                            <div class="sidebar-section">
+                                <h2 class="text-light">Profile</h2>
+                                <form action="index.html" method="post" class="form-control-borderless" onsubmit="return false;">
+                                    <div class="form-group">
+                                        <label for="side-profile-name">Name</label>
+                                        <input type="text" id="side-profile-name" name="side-profile-name" class="form-control" value="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="side-profile-email">Email</label>
+                                        <input type="email" id="side-profile-email" name="side-profile-email" class="form-control" value="john.doe@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="side-profile-password">New Password</label>
+                                        <input type="password" id="side-profile-password" name="side-profile-password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="side-profile-password-confirm">Confirm New Password</label>
+                                        <input type="password" id="side-profile-password-confirm" name="side-profile-password-confirm" class="form-control">
+                                    </div>
+                                    <div class="form-group remove-margin">
+                                        <button type="submit" class="btn btn-effect-ripple btn-primary" onclick="App.sidebar('close-sidebar-alt');">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <!-- END Sidebar Content -->
+                    </div>
+                    <!-- END Wrapper for scrolling functionality -->
+                </div>
+
+                <div id="sidebar">
+                    <!-- Sidebar Brand -->
+                    <div id="sidebar-brand" class="themed-background">
+                        <a href="{% url 'accounts:abc' %}" class="sidebar-title">
+                            <i class="fas fa-robot"></i> <span class="sidebar-nav-mini-hide">Insta<strong>Bot</strong></span>
+                        </a>
+                    </div>
+
+                    <div id="sidebar-scroll">
+                        <!-- Sidebar Content -->
+                        <div class="sidebar-content">
+                            <!-- Sidebar Navigation -->
+                            <ul class="sidebar-nav">
+                                <li>
+                                    <a href="{% url 'accounts:abc' %}" class=" active"><i class="fa fa-desktop"></i><span class="sidebar-nav-mini-hide">  Dashboard</span></a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'accounts:accountview' %}" class=" "><i class="fa fa-user-circle"></i><span class="sidebar-nav-mini-hide"> Accounts</span></a>
+                                </li>
+                                <li>
+                            <a href="{% url 'accounts:commentview' %}" class=" "><i class="fa fa-comment"></i><span class="sidebar-nav-mini-hide"> Comments</span></a>
+                                </li>
+                                <li class="sidebar-separator">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END Sidebar Content -->
+                    </div>
+                    <!-- END Wrapper for scrolling functionality -->
+
+                    <!-- Sidebar Extra Info -->
+                    <div id="sidebar-extra-info" class="sidebar-content sidebar-nav-mini-hide">
+
+                        <div class="text-center">
+                            <small>Crafted with <i class="fa fa-heart text-danger"></i> by <a href="#" target="_blank">Insta Bot</a></small><br>
+                            <small><span id="year-copy"></span> &copy; <a href="#" target="_blank">Insta Bot</a></small>
+                        </div>
+                    </div>
+                    <!-- END Sidebar Extra Info -->
+                </div>
+
+                <div id="main-container">
+
+                    <header class="navbar navbar-inverse navbar-fixed-top">
+                        <!-- Left Header Navigation -->
+                        <ul class="nav navbar-nav-custom">
+                            <!-- Main Sidebar Toggle Button -->
+                            <li>
+                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
+                                    <i class="fa fa-ellipsis-v fa-fw animation-fadeInRight" id="sidebar-toggle-mini"></i>
+                                    <i class="fa fa-bars fa-fw animation-fadeInRight" id="sidebar-toggle-full"></i>
+                                </a>
+                            </li>
+                            <!-- END Main Sidebar Toggle Button -->
+
+                            <!-- Header Link -->
+                            <li class="hidden-xs animation-fadeInQuick">
+                                <a href=""><strong>WELCOME</strong></a>
+                            </li>
+                            <!-- END Header Link -->
+                        </ul>
+                        <!-- END Left Header Navigation -->
+
+                        <!-- Right Header Navigation -->
+                        <ul class="nav navbar-nav-custom pull-right">
+                            <!-- Search Form -->
+                            <li>
+
+                            </li>
+
+{#                            <li>#}
+{#                                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');this.blur();">#}
+{#                                                                <i class="fas fa-cog"></i>#}
+{##}
+{#                                </a>#}
+{#                            </li>#}
+                            <!-- END Alternative Sidebar Toggle Button -->
+
+                            <!-- User Dropdown -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="{% static 'avatar9.jpg' %}" alt="avatar">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-header">
+                                        <strong>ADMINISTRATOR</strong>
+                                    </li>
+
+                                     <li >
+                                <form action="{% url 'accounts:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn" style="color: black;  ">Log out
+                                       <img src="{% static 'unnamed.png' %} " style="width: 22px; height: 20px; margin-left: 80px">
+                                    </button>
+                                </form>
+                            </li>
+                                </ul>
+                            </li>
+                            <!-- END User Dropdown -->
+                        </ul>
+                        <!-- END Right Header Navigation -->
+                    </header>
+
+{% block content %}
+{% endblock %}
+
+
+  </div>
+
+            <!-- END Page Container -->
+        </div>
+        <!-- END Page Wrapper -->
+            <script>let overlay = document.getElementsByClassName('loading-overlay')[0]
+            //overlay.addEventListener('click', e => overlay.classList.toggle('is-active'))
+            document.getElementById('load-button')
+                .addEventListener('click', e => overlay.classList.toggle('is-active'))</script>
+        <!-- jQuery, Bootstrap, jQuery plugins and Custom JS code -->
+        <script src="{% static 'jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'bootstrap.min.js' %}"></script>
+        <script src="{% static 'plugins.js' %}"></script>
+        <script src="{% static 'app.js' %}"></script>
+
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="js/pages/readyDashboard.js"></script>
+
+
+
+
+    </body>
+</html>

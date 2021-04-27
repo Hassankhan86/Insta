@@ -1,0 +1,47 @@
+{% extends 'basetemplate 2.html' %}
+                    <!-- END Header -->
+{% block content %}
+                    <!-- Page content -->
+                    <div id="page-content">
+                        <!-- First Row -->
+                        <div class="row">
+
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="container" >
+      <div class="">
+        <a href="{% url 'accounts:addcomment' %}" class="btn btn-info" style="float:right;MARGIN-RIGHT: 02%;" >Add Comment</a>
+        <br><br>
+        {#        <h2>Create an Awesome New Article</h2>#}
+        <table class="table table-bordered table-striped" style="background-color: white">
+            <thead>
+            <th>Comment</th>
+            <th>Action</th>
+
+            </thead>
+            <tbody>
+            {% for comment in comment %}
+            <tr style="color: black">
+                <td>{{ comment.title }}</td>
+                <td> <a href="{% url 'accounts:updatecomment' comment.id %}" style="background-color: #454E59; color: white" class="btn ">Update</a> <a href="{% url 'accounts:deletecomment' comment.id %}" style="background-color: #CA0028; color: white" class="btn ">Delete</a>  </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+                        </div>
+                        <!-- END Second Row -->
+
+
+                    </div>
+
+                    <!-- END Page Content -->
+                </div>
+
+
+{% endblock %}
+                <!-- END Main Container -->

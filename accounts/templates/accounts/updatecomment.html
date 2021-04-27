@@ -1,0 +1,30 @@
+{% extends 'basetemplate 2.html' %}
+{% block content %}
+                    <!-- Page content -->
+                    <div id="page-content">
+                        <!-- First Row -->
+                        <div class="row">
+
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="container" style="background-color: white; height: 200px;">
+  <form class="site-form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      <label>Comment</label>
+        {{ form.title }}
+
+        <input type="submit"  class="btn " style="background-color: #CA0028; color: white" value="Update">
+    </form>
+</div>
+
+                        </div>
+                        <!-- END Second Row -->
+
+
+                    </div>
+
+{% endblock %}
+                    <!-- END Page Content -->

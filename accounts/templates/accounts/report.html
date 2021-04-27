@@ -1,0 +1,72 @@
+{% extends 'basetemplate 2.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Page content -->
+    <div id="page-content">
+        <!-- First Row -->
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12 col-lg-12">
+                <!-- Forum Block -->
+                <div class="block">
+                    <!-- Forum Tabs Title -->
+                    <div class="block-title">
+                        <ul class="nav nav-tabs" data-toggle="tabs">
+                            <li class="active"><a href="#forum-categories">NAME</a></li>
+                        </ul>
+                    </div>
+                    <!-- END Forum Tabs -->
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Forum -->
+
+
+
+                        <div class="tab-pane active" id="forum-categories">
+                            <h3 class="text-dark" style="font-weight: bold;">Report Summary</h3>
+                        </div>
+                        <div>
+                            <table class="table table-warning">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Target Accounts</th>
+                                    <th>Total Likes</th>
+                                    <th>Total Comments</th>
+                                    <th>Total New Followers</th>
+                                    <th>Views in Stories</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ target }}</td>
+                                    <td>{{ like_report }}</td>
+                                    <td>{{ comment_report }}</td>
+                                    <td>{{ follow_report }}</td>
+                                    <td>{{ story_report }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- END Tab Content -->
+                </div>
+                <!-- END Forum Block -->
+            </div>
+
+        </div>
+        <!-- END Second Row -->
+
+
+    </div>
+
+{% endblock %}
